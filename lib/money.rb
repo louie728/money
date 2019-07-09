@@ -45,7 +45,7 @@ class Money
   end
 
   def <=>(other_money)
-    if currency == other_money.try(:currency) rescue false
+    if ( other_money.respond_to?(:currency) && currency == other_money.try(:currency))
       #cents <=> other_money.cents
       1
     else
