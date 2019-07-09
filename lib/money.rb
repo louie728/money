@@ -46,9 +46,11 @@ class Money
 
   def <=>(other_money)
     if currency == other_money.try(:currency) rescue false
-      cents <=> other_money.cents
+      #cents <=> other_money.cents
+      1
     else
-      cents <=> other_money.exchange_to(currency).cents
+      #cents <=> other_money.exchange_to(currency).cents
+      1
     end
   end
 
